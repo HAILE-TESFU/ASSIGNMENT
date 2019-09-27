@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>assignment 3</title>
+        <script>
+            //Part-I
+
+            //section: OBJECTS
+
+               /*=>. Hello object is one of the data types which has more than one datatype properties. this is related to the 
+                    real world. 
+                */
+                //=================================================================================================
+                /*
+                =>Emptiness of an object is if it is with out properties. it is empity property.
+                let see the following code example.
+                */
+                let student={};
+                alert(student.suchProperty===undefined);
+                //it can also be accessed using the "in" word. like the key in object.
+
+                //===========================================================================
+
+                /*
+                constant objects: we can add properties to it. but we can not change it assigned properties because they are c
+                constant
+                */
+                //=====================================================================================
+                /*
+                sum object properties in java script can be done using the for---in loop.
+                */
+                let teachersSalary={
+                    haile:3000,
+                    semere:2000,
+                    haben:1000,
+                    ranald:1500,
+                }
+                let sum=0;
+                for(key in teachersSalary){
+                    sum+=teachersSalary[key];
+                }
+                alert(sum);
+                //===================================================================================
+                /*
+                multiply numeric properties by 2;"multiplyNumeric(obj)";it makes the property values double.
+                */
+                let menu = {
+                        width: 200,
+                        height: 300,
+                        title: "My menu"
+                    };
+                    function multiplyNumeric() {
+                            for (let key in menu) {
+                                if (typeof menu[key] == 'number') {
+                                    menu[key] *= 2;
+                                }
+                            }
+                        }
+                        multiplyNumeric();
+                 
+                    alert(menu.width);
+                    //==============================================================================
+                    //===============================================================================
+         // SECTION: OBJECT "this";
+                /*
+                Syntax chech: in java script we can check the synatax error by "$ node ---check some" in the terminal window
+                it checks the syntax error with out executing the code.
+                */
+                //=================================================================================
+                /*
+                The value Of "this": "this" is used to acces the propeties of an object from a method of the function.
+                if we do not use this in the method it accesses globay on the window.
+                */
+                //====================================================================================
+                /*
+                using this in object lateral:it acts as a function not as a method.
+                */
+                let calculator = {
+                        sum() {
+                            return this.a + this.b;
+                        },
+
+                        mul() {
+                            return this.a * this.b;
+                        },
+
+                        read() {
+                            this.a = +prompt('a?', 0);
+                            this.b = +prompt('b?', 0);
+                        }
+                    };
+
+                    calculator.read();
+                    alert(calculator.sum());
+                    alert(calculator.mul());
+                    //================================================================
+                    /*
+                    chaining: this word helps to step up and down in javascript.
+                    */
+                    let ladder = {
+                            step: 0,
+                            up() {
+                                this.step++;
+                                return this;
+                            },
+                            down() {
+                                this.step--;
+                                return this;
+                            },
+                            showStep() {
+                                alert(this.step);
+                                return this;
+                            }
+                        }
+
+                        ladder.up().up().down().up().down().showStep();
+            //SECTION CONSTRUCTOR AND NEW OPERATOR:
+                    /*
+                    two functions one object: this mean we could have two function(methods) as object laterals for one 
+                    object.
+                    */
+                    //=======================================================
+                    /*
+                    creat new calculator: let calculator=new calculator(). it creates new calculator.
+                    */
+                    //====================================================================
+                    /*
+                    creat new acumulator: it acumulate some thing of the properties in javascript object.
+                    */
+                    function Accumulator(startingValue) {
+                            this.value = startingValue;
+
+                            this.read = function () {
+                                this.value += +prompt('How much to add?', 0);
+                            };
+
+                        }
+
+                        let accumulator = new Accumulator(1);
+                        accumulator.read();
+                        accumulator.read();
+                        alert(accumulator.value);
+        </script>
+
+    </head>
+</html>

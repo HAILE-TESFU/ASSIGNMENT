@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Reading status of a book library</title>
+<script>
+    function library(){
+// let library = [ 
+//     {
+//         title: 'The Road Ahead',
+//         author: ' Bill Gates',
+//         libraryId: 1254,
+//     },
+//     {
+//         title: 'Walter Isaacson',
+//         author: 'Steve Jobs',
+//         libraryId:4264,
+//     },
+//     {
+//         title: 'Mockingjay: The Final Book of The Hunger Games',
+//         author: 'Suzanne Collins',
+//         libraryId: 3245,
+//     }];
+ let book='';
+for (let i = 0; i < library.length; i++) 
+   {
+     book += "'"+library[i].libraryId+ "'" + library[i].title + "'" + ' by ' + library[i].author + "."+"<br>";
+    }
+
+    document.getElementById("out").innerHTML=book;
+}
+</script>
+</head>
+<body>
+ <button type="button" onclick="library()">library</button>
+ <div id="out"></div>
+</body>
+</html>
+
